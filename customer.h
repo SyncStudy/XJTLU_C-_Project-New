@@ -1,30 +1,23 @@
-#ifndef _CUSTOMER
-#define _CUSTOMER
-
 #include<iostream>
 #include<string>
 #include"ticket.h"
-#include<vector>
 using namespace std;
 
 class customer
 {
 protected:
-	string Name;			//Name of customer
+	string name;			//Name of customer
 	int ID;					//ID of customer
-	int telephonenumber;				//Telephone number of customer
-	vector<string> boughtMovie;			//Movies that customer has bought
-	
+	int Tel;				//Telephone number of customer
 public:
-	void setName(string name);		//Set the name
+	void setName(string Name);		//Set the name
 	void setID(int id);				//Set the ID
-	void setTelephonenumber(int Tel);			//Set the Telephonenumber
+	void setTel(int tel);			//Set the Tel
 	string getName();				//Get the name
 	int getID();					//Get the ID
-	int getTelephonenumber();					//Get the Telephonenumber
-	void buyTicket();							
-	void payTicket(ticket Ticket);				//Pay for the ticket
-	void setBoughtMovie(string MovieName);					//Set the movies has bought
+	int getTel();					//Get the Tel
+	string viewMovieInfo(int MovieNumber);		//View the information of movies
+	void buyTicket(ticket Ticket);				//Buy the ticket
+	string selectRoom(string theRoomSelected);							//Select the room (smallRoom and bigRoom may be two derived class of a base class)
+	string selectSeat(string theRoomSelected);			//Select the seat
 };
-
-#endif
