@@ -1,5 +1,20 @@
 # XJTLU_C-_Project-New
-1. 换行
+
+## Version 5.11
+
+### Display the seat
+### customer 's database: phone number, pw
+### movie's database: movieId, movieName, PriceFactorM, lastTime
+### movieTimeSlot: movieId, movieName, lastingTime,startingTime,Room
+
+
+
+
+
+
+
+
+
 在每行末尾加入：<br />
 
 2. 文字加斜体/加粗
