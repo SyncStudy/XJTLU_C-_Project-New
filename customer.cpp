@@ -1,29 +1,23 @@
-#include<time.h>
-#include<iostream>
-#include<iomanip>
-#include<Windows.h>
-#include<fstream>
 #include"customer.h"
-#include<string>
-using namespace std;
 
-void customer::setName(string Name)
+void customer::setName(string name)
 {
-	cout << "Please enter your name:" << endl;
-	getline(cin, Name);
-	name = Name;
+	Name = name;
 }
 
-void customer::setTel(int tel)
+void customer::setID(int id)
 {
-	cout << "Please enter your telephone number:" << endl;
-	cin>>tel;
-	Tel = tel;
+	ID = id;
+}
+
+void customer::setTelephonenumber(int Tel)
+{
+	telephonenumber = Tel;
 }
 
 string customer::getName()
 {
-	return name;
+	return Name;
 }
 
 int customer::getID()
@@ -31,80 +25,81 @@ int customer::getID()
 	return ID;
 }
 
-int customer::getTel()
+int customer::getTelephonenumber()
 {
-	return Tel;
+	return telephonenumber;
 }
 
-string customer::selectRoom(string theRoomSelected)
+void customer::setBoughtMovie(string MovieName)
 {
-	int choice;
-	cout << "Please select the room:" << endl;
-	cout << "Small room:" << endl;
-	cout << "1. S1" << endl;
-	cout << "2. S2" << endl;
-	cout << "3. S3" << endl;
-	cout << "4. S4" << endl;
-	cout << "5. S5" << endl;
-	cout << "Big room:" << endl;
-	cout << "6. B1" << endl;
-	cout << "7. B2" << endl;
-	cout << "8. B3" << endl;
+	boughtMovie.push_back(MovieName);
+}
+
+void customer::buyTicket(ticket *Temp)
+{
+	int command;
+	string theMovieSelected;
+	string theTimeSelected;
+	string theRoomSelected;
+	int theSeatSelected;
+	float M;
+	float R;
+
+	cout << "Recent movies are as follows" << endl;
+	//cout<<Recent movies'names
+	cout << "Please choose the number of the movie you want to see, or you can input 0 to exit ticket buying process." << endl;
+	cin >> command;
+	//Movie = the selected movie
+	//M = the corresponding movie factor
+	Temp->setTicketMovie(theMovieSelected);
+	cout << "The movie you selected is " << Temp->returnMovie() << endl;
+
+	cout << "Please select the time" << endl;
+	//cout<<Available time based on the selected movie
+	cin >> command;
+	//Time = the selected time
+	Temp->setTicketTime(theTimeSelected);
+	cout << "The time you selected is " << Temp->returnTime() << endl;
+
+	cout << "Please choose the room" << endl;
+	//cout<<Available room based on the selected movie and time
 	cout << "Please choose the number as your selection." << endl;
-	cin >> choice;
-	switch (choice)
-	{
-	case 1:
-		theRoomSelected = "S1";
-		break;
+	cin >> command;
+	//Room = the selected room;
+	//R = the corresponding room factor
+	Temp->setTicketRoom(theRoomSelected);
+	cout << "The room you select is " << Temp->returnRoom() << endl;
 
-	case 2:
-		theRoomSelected = "S2";
-		break;
+	cout << "Please select the seat" << endl;
+	selectSeat(theRoomSelected, &theSeatSelected);
+	Temp->setTicketPosition(theSeatSelected);
+	cout << "The position you select is " << Temp->returnPosition() << endl;
 
-	case 3:
-		theRoomSelected = "S3";
-		break;
+	Temp->generatePrice(M, R);
 
-	case 4:
-		theRoomSelected = "S4";
-		break;
-
-	case 5:
-		theRoomSelected = "S5";
-		break;
-
-	case 6:
-		theRoomSelected = "B1";
-		break;
-
-	case 7:
-		theRoomSelected = "B2";
-		break;
-
-	case 8:
-		theRoomSelected = "B3";
-		break;
-	}
-	return theRoomSelected;
+	cout << "Your ticket is:" << endl;
+	cout << "Movie:\t" <<Temp->returnMovie()<< endl;
+	cout << "Time:\t" << Temp->returnTime() << endl;
+	cout << "Room:\t" << Temp->returnRoom() << endl;
+	cout << "Seat:\t" << Temp->returnPosition() << endl;
+	cout << "Price:\t" << Temp->returnPrice() << endl;
 }
 
-string selectedSeat(string theRoomSelected)
+
+
+void customer::selectSeat(string theRoomSelected,int *theSeatSelected)
 {
-	string theSeatSelected;
 	if (theRoomSelected == "S1" || theRoomSelected == "S2" || theRoomSelected == "S3" || theRoomSelected == "S4" || theRoomSelected == "S5")
 	{
 		cout << "Please choose the number of your seat from 001 to 300 (enter the corresponding number):" << endl;
-		getline(cin, theSeatSelected);
+		//Display the seat map of small room
+		cin >> *theSeatSelected;
 	}
 
 	else if (theRoomSelected == "B1" || theRoomSelected == "B2" || theRoomSelected == "B3")
 	{
 		cout << "Please choose the number of your seat from 001 to 750 (enter the corresponding number):" << endl;
-		getline(cin, theSeatSelected);
+		//Display the seat map of big room
+		cin >> *theSeatSelected;
 	}
-	return theSeatSelected;
 }
-
-
-

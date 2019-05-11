@@ -4,6 +4,7 @@ using namespace std;
 
 class ticket
 {
+	friend class customer;
 private:
 	double price;
 	string movie;
@@ -12,12 +13,37 @@ private:
 	string time;
 
 public:
-	double returnTicketPrice()
+	void setTicketMovie(string Movie)
+	{
+		movie = Movie;
+	}
+
+	void setTicketRoom(string Room)
+	{
+		room = Room;
+	}
+
+	void setTicketPrice(double Price)
+	{
+		price = Price;
+	}
+
+	void setTicketTime(string Time)
+	{
+		time = Time;
+	}
+
+	void setTicketPosition(int Position)
+	{
+		position = Position;
+	}
+
+	double returnPrice()
 	{
 		return price;
-    }
+	}
 
-	string returnTheCorrespondingMovie()
+	string returnMovie()
 	{
 		return movie;
 	}
@@ -35,5 +61,9 @@ public:
 	string returnTime()
 	{
 		return time;
+	}
+	void generatePrice(float M,float R)
+	{
+		price = M * R;
 	}
 };
