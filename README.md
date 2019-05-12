@@ -8,7 +8,8 @@
 ### movieTimeSlot: movieId, movieName, lastingTime,startingTime,Room
 
 
-
+## Version 5.12 by yibo
+### Main: log on!
 
 
 
