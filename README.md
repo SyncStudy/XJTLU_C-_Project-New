@@ -1,29 +1,30 @@
-#  **XJTLU_C-_Project-New**
-# Version Control
+#  XJTLU_C-_Project-New
 
-# Development Log
-## date 5.2 by the team
-### Question confirmation
+## Version Control
 
-## date 5.4 weekly plan
-### Join in the github project
-### yibo: room class with encapsulation, basic main's input procedures
-### tianyu: customer class with encapsulation, buy tickets
-### jianheng: movie class with encapsulation
-### dequn: admin class with encapsulation, build the sql, build manage the movie
+## Development Log
+### date 5.2 by the team
+ Question confirmation <br />
 
-## date 5.11 by the team
+### date 5.4 weekly plan
+ Join in the github project <br />
+ yibo: room class with encapsulation, basic main's input procedures <br />
+ tianyu: customer class with encapsulation, buy tickets <br />
+ jianheng: movie class with encapsulation <br />
+ dequn: admin class with encapsulation, build the sql, build manage the movie <br />
 
-### Display the seat
-### customer 's database: phone number, pw
-### movie's database: movieId, movieName, PriceFactorM, lastTime
-### movieTimeSlot: movieId, movieName, lastingTime,startingTime,Room
+### date 5.11 by the team
 
-## date 5.11 by dequn and tiaoyu
-### The test demo of the front end and the back end 1.
+ Display the seat <br />
+ customer 's database: phone number, pw <br />
+ movie's database: movieId, movieName, PriceFactorM, lastTime <br />
+ movieTimeSlot: movieId, movieName, lastingTime,startingTime,Room <br />
 
-## date 5.12 by yibo
-### Main: log on!
+### date 5.11 by dequn and tiaoyu
+ The test demo of the front end and the back end 1. <br />
+
+### date 5.12 by yibo
+ Main: log on! <br />
 
 
 ## date 5.13 weekly plan
